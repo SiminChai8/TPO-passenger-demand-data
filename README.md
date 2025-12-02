@@ -1,29 +1,64 @@
-This repository contains the processed passenger arrival data used in the computational experiments of the paper.
+This repository contains the processed passenger arrival data used in the computational experiments of the paper *Train Platoon Optimization for Coordinating Feeder and Collector Lines in Urban Rail Networks*.
 
-The first dataset, 'metro demand.csv', reports the minute-level metro passenger arrivals between 07:00 and 09:00.
-The second dataset, feeder demand.csv, provides transfer passenger demand arriving from feeder trains at two transfer stations.
+The first dataset, `metro demand.csv`, reports the minute-level metro passenger arrivals between 07:00 and 09:00.
 
-Metro Passenger Arrival Data
+The second dataset, `feeder demand.csv`, provides transfer passenger demand arriving from feeder trains at two transfer stations.
 
-The file metro demand.csv contains the simulated passenger arrival numbers at each metro station at a resolution of one minute.
+## Metro Passenger Arrival Data
 
-Each row corresponds to a pair (station, time).
-Element q[s,t] denotes the number of arriving passengers at station s during minute t.
-The matrix is flattened along the time axis in row-major order, following the format:
+The file `metro demand.csv` contains the passenger arrival numbers at each metro station at a resolution of one minute.
 
-'''
+Each row corresponds to a pair *(station, time)*.
+Element `q[s,t]` denotes the number of arriving passengers at station *s* during minute *t*.
+The matrix is flattened along the time axis in row-major order:
+
+```
+station_1, t=1, q[1,1]
+station_1, t=2, q[1,2]
+...
+station_2, t=1, q[2,1]
+station_2, t=2, q[2,2]
+...
+```
+
+### Example CSV Format
+
+```csv
+Anheqiao Bei, 7:00, 97
+Anheqiao Bei, 7:01, 115
+...
+Beigongmen, 7:00, 30
+Beigongmen, 7:01, 31
+...
+```
 
 
 
+## Transfer Passenger Demand Data
 
+The file `feeder demand.csv` contains the arrival demand of transfer passengers coming from feeder trains.
+The dataset covers two transfer stations, Beijing South Railway Station and Xizhimen Station, across two directions (Upstream and Downstream) and ten feeder train indices.
 
-
-Transfer Passenger Demand Data
-
-The file feeder demand.csv contains the arrival demand of transfer passengers coming from feeder trains.
-The dataset covers two transfer stations—Beijing South Railway Station and Xizhimen Station—across two directions (Upstream and Downstream) and ten feeder train indices.
-
-Each row corresponds to an entry (station, direction, feeder_train_index) with its demand value.
+Each row corresponds to an entry *(station, direction, feeder_train_index)*.
+Element `p[l,s]` denotes the number of transfer passengers from feeder train *l* at station *s*.
 The structure of the file is as follows:
+
+```
+station_1, direction=Upstream, feeder_train_index=1, p[1,1]
+station_1, direction=Upstream, feeder_train_index=2, p[2,1]
+...
+station_2, direction=Downstream, feeder_train_index=10, p[10,2]
+...
+```
+### Example CSV Format
+```csv
+Beijing South Railway Station, Upstream, 1, 840
+Beijing South Railway Station, Upstream, 2, 875
+...
+Xizhimen Station, Downstream, 1, 740
+Xizhimen Station, Downstream, 2, 775
+...
+```
+
 
 
