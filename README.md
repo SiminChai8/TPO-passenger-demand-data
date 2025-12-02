@@ -1,0 +1,29 @@
+This repository contains the processed passenger arrival data used in the computational experiments of the paper.
+
+The first dataset, 'metro demand.csv', reports the minute-level metro passenger arrivals between 07:00 and 09:00.
+The second dataset, feeder demand.csv, provides transfer passenger demand arriving from feeder trains at two transfer stations.
+
+Metro Passenger Arrival Data
+
+The file metro demand.csv contains the simulated passenger arrival numbers at each metro station at a resolution of one minute.
+
+Each row corresponds to a pair (station, time).
+Element q[s,t] denotes the number of arriving passengers at station s during minute t.
+The matrix is flattened along the time axis in row-major order, following the format:
+
+'''
+
+
+
+
+
+
+Transfer Passenger Demand Data
+
+The file feeder demand.csv contains the arrival demand of transfer passengers coming from feeder trains.
+The dataset covers two transfer stations—Beijing South Railway Station and Xizhimen Station—across two directions (Upstream and Downstream) and ten feeder train indices.
+
+Each row corresponds to an entry (station, direction, feeder_train_index) with its demand value.
+The structure of the file is as follows:
+
+
