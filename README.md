@@ -2,7 +2,7 @@ This repository contains the processed passenger arrival data used in the comput
 
 The first dataset, `metro demand.csv`, reports the minute-level metro passenger arrivals between 07:00 and 09:00.
 
-The second dataset, `feeder demand.csv`, provides transfer passenger demand arriving from feeder trains at two transfer stations.
+The second dataset, `feeder demand.csv`, provides transfer passenger demand arriving from ten feeder trains at two transfer stations.
 
 ## Metro Passenger Arrival Data
 
@@ -59,6 +59,7 @@ Xizhimen Station, Downstream, 1, 740
 Xizhimen Station, Downstream, 2, 775
 ...
 ```
+
 
 
 
