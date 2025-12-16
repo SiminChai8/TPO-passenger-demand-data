@@ -1,12 +1,17 @@
-This repository contains the processed passenger arrival data used in the computational experiments of the paper *Train Platoon Optimization for Coordinating Feeder and Collector Lines in Urban Rail Networks*.
+This repository contains the data of the instances used in the computational experiments of the paper *Train Platoon Optimization for Coordinating Feeder and Collector Lines in Urban Rail Networks*.
+It contains input parameters and passenger demand data.
 
-The first dataset, `metro demand.csv`, reports the minute-level metro passenger arrivals between 07:00 and 09:00.
+## 1. `instances/` JSON Input Paramters
 
-The second dataset, `feeder demand.csv`, provides transfer passenger demand arriving from ten feeder trains at two transfer stations.
+This folder contains **10 JSON instance files**:
 
-## Metro Passenger Arrival Data
+- File names: &nbsp; `instance_1.json  …  instance_10.json`
 
-The file `metro demand.csv` contains the passenger arrival numbers at each metro station at a resolution of one minute.
+Each JSON file stores the complete model input parameters, including sets, capacities, headways, and other operational parameters.
+
+## 2. `metro demand.csv` : Metro Passenger Arrival Data
+
+The file `metro demand.csv` contains the passenger arrival numbers at each metro station at a resolution of one minute between 07:00 and 09:00.
 
 Each row corresponds to a pair *(station, time)*.
 Element `q[s,t]` denotes the number of arriving passengers at station *s* during minute *t*.
@@ -34,9 +39,9 @@ Beigongmen, 7:01, 31
 
 
 
-## Transfer Passenger Demand Data
+## 3. `feeder demand.csv` : Transfer Passenger Demand Data
 
-The file `feeder demand.csv` contains the arrival demand of transfer passengers coming from feeder trains.
+The file `feeder demand.csv` contains the demand of transfer passengers coming from ten feeder trains at two transfer stations.
 The dataset covers two transfer stations, Beijing South Railway Station and Xizhimen Station, across two directions (Upstream and Downstream) and ten feeder train indices.
 
 Each row corresponds to an entry *(station, direction, feeder_train_index)*.
@@ -59,6 +64,7 @@ Xizhimen Station, Downstream, 1, 740
 Xizhimen Station, Downstream, 2, 775
 ...
 ```
+
 
 
 
